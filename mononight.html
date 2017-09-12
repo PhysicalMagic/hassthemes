@@ -1,13 +1,198 @@
 <style>
+html {
+    font-size: 16px !important;
+}    
+    
 .toggle-button.paper-toggle-button {
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+    top: -5px;
+    }
+
+.toggle-container.paper-toggle-button {
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 22px;
+    margin: 4px 1px;
+}  
+    
+.toggle-bar.paper-toggle-button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: background-color linear .08s;
+    background-color: var(--paper-toggle-button-unchecked-bar-color,#000);
+    border: 2px solid #FFF;
+}    
+
+.header.ha-entities-card .toggle-bar.paper-toggle-button {
+    opacity: 1;
+    background-color: var(--primary-color);
+    border: 2px solid rgba(255,255,255,0.6);
+}    
+    
+.header.ha-entities-card .toggle-button.paper-toggle-button {
+    opacity: 1;
+    background-color: rgba(255,255,255,0.6);
+}   
+    
+    
+.toggle-button.paper-toggle-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    box-shadow: none;
+    transition: -webkit-transform linear .08s,background-color linear .08s;
+    transition: transform linear .08s,background-color linear .08s;
+    will-change: transform;
+    background-color: var(--paper-toggle-button-unchecked-button-color,var(--paper-grey-50));
 }
-        
-app-toolbar.partial-cards {
-    color: var(--primary-color) !important;
+    
+paper-toggle-button[checked] .toggle-button.paper-toggle-button {
+    -webkit-transform: translate(22px,0);
+    transform: translate(22px,0);
+}    
+
+paper-toggle-button[checked]:not([disabled]) .toggle-bar.paper-toggle-button {
+    opacity: 1;
+    background-color: var(--primary-color);
+}    
+    
+paper-toggle-button[checked]:not([disabled]) .toggle-button.paper-toggle-button {
+    background-color: #FFF;
+}    
+    
+.state.ha-entities-card {
+    padding: 0px 20px;
+    cursor: pointer;
 }
-        
-app-header.partial-cards {
-    color: #FF00FF;
+
+.header.ha-entities-card {
+    background-color: var(--primary-color);
+    padding: 36px 20px 8px 30px;
+    color: rgba(255,255,255,0.7);
 }
+    
+.label-badge.ha-label-badge {
+    border: 2px solid var(--primary-color);
+    
+    }
+    
+app-header-layout.partial-cards {
+    background-color: var(--primary-color2);
+}
+   
+.label-badge.ha-label-badge .label.ha-label-badge span.ha-label-badge {
+    background-color: var(--primary-color);
+}  
+    
+.states.ha-entities-card {
+    padding: 12px 0px 14px 0px;
+}    
+    
+state-badge {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    color: #44739e;
+    border-radius: 50%;
+    height: 20px;
+    text-align: center;
+    background-size: cover;
+    line-height: 40px;
+} 
+   
+ha-card {
+    border: 3px solid var(--primary-color) !important;
+    background-color: #FFF;
+}    
+
+ha-sidebar {
+    --sidebar-text_-_font-size: 16px;
+    --sidebar-text_-_color: rgba(0,0,0,0.5) !important;
+    border-right: none;
+}    
+    
+app-toolbar.ha-sidebar {
+    padding-bottom: 48px;
+    border-bottom: none;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+}  
+    
+    .style-scope.paper-icon-button {
+    color: var(--primary-color2);
+    }
+
+paper-menu {
+    background: var(--primary-color3);
+    border: none;
+    padding-top: 12px;
+    
+}
+    
+iron-selector.paper-drawer-panel > #drawer.paper-drawer-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--primary-color3);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.divider.ha-sidebar {
+    height: 4px;
+    background-color: rgba(0,0,0,0.02);
+    margin: 4px 0;
+    opacity: 1;
+}    
+
+app-toolbar.ha-panel-map, app-toolbar.ha-panel-logbook, app-toolbar.ha-panel-history, app-toolbar.ha-panel-config, app-toolbar.ha-panel-service, app-toolbar.ha-panel-dev-state, app-toolbar.ha-panel-dev-event, app-toolbar.ha-panel-dev-template, app-toolbar.ha-panel-dev-info {
+    min-height: 112px !important;
+}
+    
+    app-toolbar[main-title] {
+        display: none;
+    }  
+    
+.camera-feed.ha-camera-card {
+    border: 3px solid var(--primary-color);
+    padding: 3px;
+    width: calc(100% - 12px);
+}    
+    
+.caption.ha-camera-card {
+        margin: 6px;
+    }
+    
+    .dev-tools.ha-sidebar .style-scope.paper-icon-button {
+        color: #777;
+    }    
+    
+.content-icon.paper-icon-item
+    {
+        color: #777;
+    }
+    
+.iron-selected
+    {
+        #F7E !important;
+    }
+    
+.badge-container.ha-label-badge .title.ha-label-badge {
+    margin-top: 1em;
+    font-size: 1em;
+    width: 5em;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: #777;
+    
+    }
     </style>
